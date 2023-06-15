@@ -3,7 +3,7 @@ name: Docs deploy
 on: push
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -25,5 +25,5 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: _build/
+        publish_dir: _build/html/
         force_orphan: true
